@@ -7,4 +7,4 @@ def index(request):
     return render(request, 'blog/index.html')
 
 def nav(request):
-    return render(request,"blog/navbar.html")
+    return render(request,"blog/home.html")

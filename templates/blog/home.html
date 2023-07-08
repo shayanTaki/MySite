@@ -1,0 +1,8 @@
+{% extends 'blog/layout.html' %}
+{% load static %}
+{% block body %}
+<img style="width: 100%;filter: blur(3px);position: absolute;z-index: -1" src="{% static 'blog/img/bg.jpg' %}" alt="sh" >
+    <div style="display: flex;justify-content: center;
+  align-items: center; border: 2px solid white;width: 100%;margin-top: 30%;z-index: 1;height: 4px"><i style="font-size: 40px;color: black;border: 1px solid black;border-radius: 15px" class="fa fa-user-secret"></i></div>
+{% endblock %}
+<i class="fa fa-user-secret"></i>
