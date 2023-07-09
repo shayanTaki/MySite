@@ -1,19 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    .container{
+    margin-top:50px;
+    justify-content: center;
+    filter: blur(.6px);
+    background-color: black;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom:20px;
+ 
+    }
+    p{
+      color:rgb(14, 92, 14);
+      display:inline-block;
+      font-size: 45px;
+      text-align:center;
+      height:45%;
+      width: 0ch;
+      overflow:hidden;
+      border-right: 1px solid white;
+      animation:
+      typing .5s steps(7) forwards 2s;
+    }
+    @keyframes typing{
+      100% {width:9.5ch;}
+    }
+
+
+  </style>
+
+
+
   <title>PegasusWeb</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+    function scrollToTarget() {
+      const target = document.getElementById('slideshow');
+      const me = document.getElementById('home-line');
+      me.style.display = "none";
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+</script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
+
+
+
 <body style="background-color: black">
 <nav class="navbar navbar-inverse navbar-fixed-top" style="padding-bottom: 10px;" >
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="#">PegasusWeb</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
@@ -24,16 +69,20 @@
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search" name="search">
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit" class="btn btn-default">search</button>
     </form>
   </div>
 </nav>
 
-<div style="filter: blur(.6px);background-color: black;width: 100%;color: aliceblue;padding-top: 60px" class="container">
-  <h3 >Navbar Forms</h3>
-  <p>Use the .navbar-form class to vertically align form elements (same padding as links) inside the navbar.</p>
+<div style="" class="container">
+  <p>Who Am I?</p><p style="font-size:25px;">IM full stack?</p><p>IM Hacker?</p><p style="font-size:25px;" >Who Ar You?</p><p>Pegasus</p>
 </div>
+
+
+
 {% block body %}
+
+
 
 {% endblock body %}
 </body>
