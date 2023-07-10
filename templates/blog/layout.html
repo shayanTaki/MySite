@@ -10,7 +10,7 @@
     padding-bottom:20px;
  
     }
-    p{
+    #pp{
       color:rgb(14, 92, 14);
       display:inline-block;
       font-size: 45px;
@@ -20,7 +20,7 @@
       overflow:hidden;
       border-right: 1px solid white;
       animation:
-      typing .5s steps(7) forwards 2s;
+      typing .5s steps(7) forwards 1s;
     }
     @keyframes typing{
       100% {width:9.5ch;}
@@ -52,7 +52,7 @@
 
 
 
-<body style="background-color: black">
+<body style="background-color: black"  onload="typeWriter()">
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -86,7 +86,7 @@
 </nav>
 
 <div style="" class="container">
-  <p>Who Am I?</p><p style="font-size:25px;">IM full stack?</p><p>IM Hacker?</p><p style="font-size:25px;" >Who Ar You?</p><p>Pegasus</p>
+  <p id="pp">Who Am I?</p><p id="pp" style="font-size:25px;">IM full stack?</p><p id="pp">IM Hacker?</p><p id="pp" style="font-size:25px;" >Who Ar You?</p><p id="pp" >Pegasus</p>
 </div>
 
 

@@ -23,6 +23,7 @@
   border:2px solid green;
     flex: 35%;
     height: 45vh;
+    word-break: break-all;
 
 
 }
@@ -30,6 +31,7 @@
     margin: 3vh;
     height: 40vh;
     border:2px solid green;
+    overflow: hidden;
 }
 
 .felex-two {
@@ -136,12 +138,33 @@
         overflow:hidden;
         margin-bottom:45vh;
       }
-  
+  #demo{
+      width: 100%;
+      height: 100%;
+       padding: 2vh;
+  }
 </style>
+
+    <script>
+
+var i = 0;
+var txt = 'Lorem ipsum dummy text blabla. hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh';
+var speed = 50;
+
+function typeWriter() {
+    if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+
+    }
+}
+    </script>
+{#    <button type="button"  >helooooooo</button>#}
 <div class="felex-base">
 
 
- <div class="felex-one" >   <div class="felex-one-in">  </div>  </div>
+ <div class="felex-one" >   <div class="felex-one-in"> <p id="demo" class="h1" ></p>  </div>  </div>
 
 
     <div class="felex-two"  >   <div class="felex-two-in">       </div>  </div>
