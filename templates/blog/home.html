@@ -5,12 +5,16 @@
     <style>
 
 .felex-base{
-  width:100%;
+  width:92%;
   display:flex;
+    margin-right: 3vh;
+    margin-left: 3vh;
   margin-top:10%;
     flex-wrap: wrap;
   position:absolute;
   z-index:1;
+    left: .5vh;
+    right: 2vh;
 
       }
 
@@ -18,12 +22,19 @@
 .felex-one {
   border:2px solid green;
     flex: 35%;
+    height: 45vh;
 
 
 }
+.felex-one-in{
+    margin: 3vh;
+    height: 40vh;
+    border:2px solid green;
+}
 
 .felex-two {
-  border:2px solid green;
+
+    border:2px solid green;
     flex: 35%;
 
 
@@ -130,7 +141,15 @@
 <div class="felex-base">
 
 
- <div class="felex-one" >hi</div> <div class="felex-two"  >every </div> <div class="felex-three" >one </div>
+ <div class="felex-one" >   <div class="felex-one-in">  </div>  </div>
+
+
+    <div class="felex-two"  >   <div class="felex-two-in">       </div>  </div>
+
+
+    <div class="felex-three" >  < div class="ffelex-three-in">       </div>  </div>
+
+
 
 </div>
 
