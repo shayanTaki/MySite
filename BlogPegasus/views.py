@@ -10,6 +10,8 @@ def nav(request):
     sh =TexTak.objects.all()
     for x in sh:
         y = x.mtn1
+        mtn2 =x.mtn2
     return render(request,"blog/home.html", {
-        'textt':y
+        'textt':y,
+        'mtn2':mtn2
     })
