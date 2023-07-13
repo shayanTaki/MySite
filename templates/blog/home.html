@@ -17,18 +17,32 @@ function typeWriter() {
 
     }
 }
+
+var g = 0;
+var txtg = "{{mtn2}}"
+var speedg = 50;
+      
+function TypeTow() {
+    if (g < txtg.length) { 
+        document.getElementById("mtn2").innerHTML += txtg.charAt(g);
+        g++;
+        setTimeout(TypeTow, speedg);
+}
+}
     </script>
+
+
 {#    <button type="button"  >helooooooo</button>#}
 <div class="felex-base">
 
 
- <div class="felex-one" >   <div class="felex-one-in"> <p id="demo" class="h1" ></p>  </div>  </div>
+ <div class="felex-one" >   <div class="felex-one-in"> <p id="demo" class="h3" ></p>  </div>  </div>
 
 
-    <div class="felex-two"  >   <div class="felex-two-in">       </div>  </div>
+ <div class="felex-two"  >   <div class="felex-two-in"> <p id="mtn2"class="h3" ></p>      </div>  </div>
 
 
-    <div class="felex-three" >  < div class="ffelex-three-in">       </div>  </div>
+ <div class="felex-three" >  < div class="ffelex-three-in">       </div>  </div>
 
 
 
