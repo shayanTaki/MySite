@@ -29,6 +29,17 @@ function TypeTow() {
         setTimeout(TypeTow, speedg);
 }
 }
+var j = 0;
+var txtj = "{{mtn3}}"
+var speedj = 50;
+
+function TypeThree() {
+    if (j < txtg.length) {
+        document.getElementById("mtn3").innerHTML += txtj.charAt(j);
+        j++;
+        setTimeout(TypeThree, speedj);
+    }
+}
     </script>
 
 
@@ -42,7 +53,7 @@ function TypeTow() {
  <div class="felex-two"  >   <div class="felex-two-in"> <p id="mtn2"class="h3" ></p>      </div>  </div>
 
 
- <div class="felex-three" >  < div class="ffelex-three-in">       </div>  </div>
+ <div class="felex-three" >  <div class="felex-three-in">  <p id="mtn3"class="h3" >     </div>  </div>
 
 
 
@@ -63,12 +74,15 @@ function TypeTow() {
       {% comment %} <a style="position:relative;top:300vh" id="a1">
         heloow
       </a> {% endcomment %}
-   
-   
-   
+
+
    
     </div>
+
+
+
     <div id="slideshow" class="slideshow-container">
+        <p style="color:white;">heloo</p>
 
       <div class="mySlides fade">
         <div class="numbertext">1 / 3</div>
