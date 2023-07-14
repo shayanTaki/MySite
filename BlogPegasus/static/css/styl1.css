@@ -17,6 +17,14 @@
       }
 
 
+@media only screen and (max-width: 800px){
+    .felex-base{
+          flex-direction: column;
+
+    }
+}
+
+
 .felex-one {
   /* border:2px solid green; */
   flex: 35%;

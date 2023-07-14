@@ -10,7 +10,7 @@ body{
     padding-bottom:20px;
 
     }
-    #pp{
+#pp{
       color:rgb(14, 92, 14);
       display:inline-block;
       font-size: 45px;
@@ -22,7 +22,7 @@ body{
       animation:
       typing .5s steps(7) forwards 1s;
     }
-    @keyframes typing{
+@keyframes typing{
       100% {width:9.5ch;}
     }
 
