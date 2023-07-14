@@ -1,0 +1,28 @@
+body{
+    background-image: url("../blog/img/bg.jpg");
+
+}
+.container{
+    justify-content: center;
+    filter: blur(.6px);
+    background-color: black;
+    width: 100%;
+    padding-bottom:20px;
+
+    }
+    #pp{
+      color:rgb(14, 92, 14);
+      display:inline-block;
+      font-size: 45px;
+      text-align:center;
+      height:45%;
+      width: 0ch;
+      overflow:hidden;
+      border-right: 1px solid white;
+      animation:
+      typing .5s steps(7) forwards 1s;
+    }
+    @keyframes typing{
+      100% {width:9.5ch;}
+    }
+
