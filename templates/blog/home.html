@@ -57,10 +57,10 @@ function TypeThree() {
 
 
 <di id="d-itm-1">
-    {% for g in rang %}
+    {% for g in menuItem %}
         <div class="custom-box">
-            <h2 class="box-title">عنوان</h2>
-            <p class="box-content">متن فید</p>
+            <h2 class="box-title">{{ g.name }}</h2>
+            <a href="{{ g.lnk_a }}" class="box-content">{{ g.mtn_kol }}</a>
          </div>
     {% endfor %}
 
