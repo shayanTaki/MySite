@@ -56,7 +56,43 @@ function TypeThree() {
  <div class="felex-three" >  <div class="felex-three-in">  <p id="mtn3"class="h3" >     </div>  </div>
 
 
+<di id="d-itm-1">
+    {% for g in rang %}
+        <div class="custom-box">
+            <h2 class="box-title">عنوان</h2>
+            <p class="box-content">متن فید</p>
+         </div>
+    {% endfor %}
 
+
+</di>
+
+
+
+
+
+
+
+<div id="slideshow" class="slideshow-container">
+        <p style="color:white;">heloo</p>
+
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="{% static 'blog/img/bg.jpg' %}" style="width:100%">
+        <div class="text">Caption Text</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="{% static 'blog/img/ss.jpg' %}" style="width:100%; ">
+        <div class="text">Caption Two</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="{% static 'blog/img/bg.jpg' %}" style="width:100%">
+        <div class="text">Caption Three</div>
+      </div>
 </div>
 
 
@@ -81,26 +117,7 @@ function TypeThree() {
 
 
 
-    <div id="slideshow" class="slideshow-container">
-        <p style="color:white;">heloo</p>
 
-      <div class="mySlides fade">
-        <div class="numbertext">1 / 3</div>
-        <img src="{% static 'blog/img/bg.jpg' %}" style="width:100%">
-        <div class="text">Caption Text</div>
-      </div>
-      
-      <div class="mySlides fade">
-        <div class="numbertext">2 / 3</div>
-        <img src="{% static 'blog/img/ss.jpg' %}" style="width:100%; ">
-        <div class="text">Caption Two</div>
-      </div>
-      
-      <div class="mySlides fade">
-        <div class="numbertext">3 / 3</div>
-        <img src="{% static 'blog/img/bg.jpg' %}" style="width:100%">
-        <div class="text">Caption Three</div>
-      </div>
       
       </div>
       <br>
