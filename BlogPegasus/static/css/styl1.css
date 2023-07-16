@@ -31,6 +31,7 @@
   flex: 33%;
   height: 45vh;
   word-break: break-all;
+    background-color: rgba(0, 0, 0, 0.56);
 
 
 }
@@ -47,6 +48,7 @@
     flex: 33%;
     height: 45vh;
     word-break: break-all;
+     background-color: rgba(0, 0, 0, 0.56);
 
 }
 .felex-two-in{
@@ -61,6 +63,7 @@
     flex: 33%;
     height: 45vh;
     word-break: break-all;
+     background-color: rgba(0, 0, 0, 0.56);
 }
 
 .felex-three-in{
@@ -223,25 +226,36 @@
   width: 25vh;
   height: 25vh;
   position: sticky;
-  background-color: #f1f1f1;
+  background-color: hsla(0, 10%, 4%, 0.76);
   border-radius: 10px;
   overflow: hidden;
 }
 
 .box-title {
   font-size: 18px;
-  color: #333;
+  color: #ffffff;
+    font-family:'vazirC' ;
+    color: #fbfdff;
   text-align: center;
   position: relative;
   transition: all 0.5s;
 }
 
 .box-content {
+    font-family:'vazirC' ;
+    text-decoration: none;
+    color: #fbfdff;
   font-size: 14px;
-  color: #666;
+  color: #ffffff;
   text-align: center;
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 0.9s;
+}
+
+.box-content:hover{
+    text-decoration: none;
+    color: #fbfdff;
+
 }
 
 .custom-box:hover .box-title {
