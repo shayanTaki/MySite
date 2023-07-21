@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import Textarea
-from .models import TexTak, menuItem,Photo
+from .models import TexTak, menuItem
 from django.contrib import admin
 
 class TexTakForm(forms.ModelForm):
@@ -42,22 +42,5 @@ class menuItemAdmin(admin.ModelAdmin):
         return super().change_view(request, object_id, form_url, extra_context=extra_context)
 
 
-
-
-
-class PhotoForm(forms.ModelForm):
-    class Meta:
-        model = Photo
-        fields = '__all__'
-
-# تغییرات لازم در کلاس PhotoAdmin
-class PhotoAdmin(admin.ModelAdmin):
-    list_display = ['id', 'image']
-    form = PhotoForm
-
-
-
-
 admin.site.register(TexTak, TexTakAdmin)
 admin.site.register(menuItem, menuItemAdmin)
-admin.site.register(Photo,PhotoAdmin)

@@ -1,5 +1,30 @@
 {% extends 'blog/layout.html' %}
 {% load static %}
+
+{% block head %}
+
+<title>PegasusWeb</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+  <script src="{% static 'js/bootstrap.min' %}"></script>
+  <script src="{% static 'js/jquery.min' %}"></script>
+  <script>
+    function scrollToTarget() {
+      const target = document.getElementById('p_tank');
+      const me = document.getElementById('home-line');
+      me.style.display = "none";
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+
+</script>
+
+{% endblock head %}
+
+
+
+
 {% block body %}
 
 
@@ -21,9 +46,9 @@ function typeWriter() {
 var g = 0;
 var txtg = "{{mtn2}}"
 var speedg = 50;
-      
+
 function TypeTow() {
-    if (g < txtg.length) { 
+    if (g < txtg.length) {
         document.getElementById("mtn2").innerHTML += txtg.charAt(g);
         g++;
         setTimeout(TypeTow, speedg);
@@ -43,111 +68,144 @@ function TypeThree() {
     </script>
 
 
-{#    <button type="button"  >helooooooo</button>#}
-<div class="felex-base">
+<div class="mane1" style="display: block;width: 100%">
+
+    <div class="felex-base">
 
 
- <div class="felex-one" >   <div class="felex-one-in"> <p id="demo" class="h3" ></p>  </div>  </div>
+        <div class="felex-one" >   <div class="felex-one-in"> <p id="demo" class="h3" ></p>  </div>  </div>
 
 
- <div class="felex-two"  >   <div class="felex-two-in"> <p id="mtn2"class="h3" ></p>      </div>  </div>
+        <div class="felex-two"  >   <div class="felex-two-in"> <p id="mtn2"class="h3" ></p>      </div>  </div>
 
 
- <div class="felex-three" >  <div class="felex-three-in">  <p id="mtn3"class="h3" >     </div>  </div>
+        <div class="felex-three" >  <div class="felex-three-in">  <p id="mtn3"class="h3" >     </div>  </div>
 
 
-<di id="d-itm-1">
-    {% for g in menuItem %}
-        <div class="custom-box">
-            <h2 class="box-title">{{ g.name }}</h2>
-            <a href="{{ g.lnk_a }}" class="box-content">{{ g.mtn_kol }}</a>
-         </div>
-    {% endfor %}
+        <di id="d-itm-1">
+            {% for g in menuItem %}
+                <div class="custom-box">
+                    <h2 class="box-title">{{ g.name }}</h2>
+                    <a href="{{ g.lnk_a }}" class="box-content">{{ g.mtn_kol }}</a>
+                </div>
+            {% endfor %}
 
 
-</di>
-
-
-
-
+        </di>
 
 
 
-<div id="slideshow" class="slideshow-container">
-        <p style="color:white;">heloo</p>
-
-      <div class="mySlides fade">
-        <div class="numbertext">1 / 3</div>
-        <img src="{% static 'blog/img/bg.jpg' %}" style="width:100%">
-        <div class="text">Caption Text</div>
-      </div>
-
-      <div class="mySlides fade">
-        <div class="numbertext">2 / 3</div>
-        <img src="{% static 'blog/img/ss.jpg' %}" style="width:100%; ">
-        <div class="text">Caption Two</div>
-      </div>
-
-      <div class="mySlides fade">
-        <div class="numbertext">3 / 3</div>
-        <img src="{% static 'blog/img/bg.jpg' %}" style="width:100%">
-        <div class="text">Caption Three</div>
-      </div>
-</div>
 
 
-<img id="img" src="{% static 'blog/img/bg.jpg' %}" alt="sh" >
-    <div id="home-line">
-      
-       <a style="cursor: pointer;" onclick="scrollToTarget()" >
 
-        <i style="font-size: 40px;color: white;border: 1px solid black;border-radius: 15px" class="fa fa-user-secret">
 
-        </i>
-      </a>
+        <div id="slideshow" class="slideshow-container">
+{#            <p style="color:white;">heloo</p>#}
+
+            <div class="mySlides fade">
+{#                <div class="numbertext">1 / 3</div>#}
+                <img class="sld-img" src="{% static 'blog/img/bg.jpg' %}" style="width: 100%;height: 100%">
+                <div class="text">Caption Text</div>
+            </div>
+
+            <div class="mySlides fade">
+{#                <div class="numbertext">2 / 3</div>#}
+                <img class="sld-img" src="{% static 'blog/img/sld1.jpg' %}" style="width: 100%;height: 100%">
+                <div class="text">Caption Two</div>
+            </div>
+
+            <div class="mySlides fade">
+{#                <div class="numbertext">3 / 3</div>#}
+                <img class="sld-img" src="{% static 'blog/img/sld2.jpg' %}" style="width: 100%;height: 100%">
+                <div class="text">سلام من شایان هستم</div>
+            </div>
+        </div>
+
+
+
+        </div>
+
+
+ <img id="img" src="{% static 'blog/img/bg.jpg' %}" alt="sh" >
+        <div id="home-line">
+
+            <a style="cursor: pointer;" onclick="scrollToTarget()" >
+
+                <i style="font-size: 40px;color: white;border: 1px solid black;border-radius: 15px" class="fa fa-user-secret">
+
+                </i>
+            </a>
+
+
     </div>
+
+    <div class="threecircel">
+  {% for d in img_mno %}
+
+            <div class="glass-div1">
+                <div class="roundcont1">
+                  <img src="{% static d.image %}" alt="تصویر" class="blur-image1">
+                  <div class="text-container1">
+                    <a href="{{d.link_web}}" class="title1">{{d.title}}</a>
+                    <p class="description1">{{d.text_inf}}</p>
+                  </div>
+                </div>
+            </div>
+
+
+  {% endfor %}
+    </div>
+
     <div>
-      {% comment %} <a style="position:relative;top:300vh" id="a1">
-        heloow
-      </a> {% endcomment %}
-
-
-   
+        <p id="p_tank" style="color: #5bc0de;position: relative">hi </p>
     </div>
 
 
+</div>
+    {#    <button type="button"  >helooooooo</button>#}
+
+    <div class="div-z">
+
+        <div class="div-z-in"></div>
 
 
-      
-      </div>
+
+
+    </div>
       <br>
       <div style="text-align:center">
-        <span class="dot"></span> 
-        <span class="dot"></span> 
-        <span class="dot"></span> 
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
       </div>
-      
-      
+
+
+
+
+
+
       <script>
       let slideIndex = 0;
       showSlides();
-      
+
       function showSlides() {
         let i;
         let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
+        {#let dots = document.getElementsByClassName("dot");#}
         for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";  
+          slides[i].style.display = "none";
         }
         slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}    
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";  
-        dots[slideIndex-1].className += " active";
+        if (slideIndex > slides.length) {slideIndex = 1}
+        {#for (i = 0; i < dots.length; i++) {#}
+        {#  dots[i].className = dots[i].className.replace(" active", "");#}
+
+        slides[slideIndex-1].style.display = "block";
+        {#dots[slideIndex-1].className += " active";#}
         setTimeout(showSlides, 5000); // Change image every 2 seconds
       }
       </script>
+
+
+
 {% endblock %}
-<i class="fa fa-user-secret"></i>
