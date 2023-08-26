@@ -6,6 +6,9 @@ from .models import TexTak ,menuItem ,Photo
 def index(request):
     return render(request, 'blog/index.html')
 
+
+
+
 def nav(request):
     sh =TexTak.objects.all()
     menu = menuItem.objects.all()

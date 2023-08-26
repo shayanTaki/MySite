@@ -1,0 +1,33 @@
+{% extends 'Terminal/base.html' %}
+{% load static %}
+{% block Body %}
+<div class="terminal-container">
+        <div class="terminal">
+            <pre id="output"></pre>
+            <div class="prompt">guest@hacker:~$ <span class="input" id="input" contenteditable></span></div>
+            <div class="items">
+                <p>Available items:</p>
+                <ul>
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                </ul>
+            </div>
+            <div class="penguin">
+                <pre>
+  .--.
+ |o_o |
+ |:_/ |
+//   \ \
+(|     | )
+/'\_   _/`\
+\___)=(___/
+                </pre>
+                <div class="penguin-caption">pegasos</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+"></script>
+{% endblock %}
