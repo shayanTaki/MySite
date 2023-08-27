@@ -18,7 +18,7 @@
 
 .terminal-container {
   width: 90%;
-  max-width: 800px;
+  max-width: 100vh;
 }
 
 .terminal {
@@ -28,8 +28,12 @@
   border: 2px solid #00ff00;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-  position: relative;
+  position: absolute;
   overflow: auto;
+    width: 100vh;
+    height: 60vh;
+    top: 10%;
+    left: 25%;
 }
 
 .prompt {

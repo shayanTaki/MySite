@@ -4,7 +4,7 @@ from .models import TexTak ,menuItem ,Photo
 # Create your views here.
 # textt = 'shayannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'
 def index(request):
-    return render(request, 'blog/index.html')
+    return render(request, 'Terminal/Terminal.html')
 
 
 
