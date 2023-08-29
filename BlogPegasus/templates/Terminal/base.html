@@ -30,10 +30,12 @@
   box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
   position: absolute;
   overflow: auto;
-    width: 100vh;
+   width: 85%;
     height: 60vh;
     top: 10%;
-    left: 25%;
+    left: 2vh;
+    font-size: 2vh;
+
 }
 
 .prompt {
@@ -45,7 +47,7 @@
   font-weight: bold;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 93%;
   background-color: #000;
 }
 
@@ -83,7 +85,7 @@
 }
 
 .penguin {
-  text-align: right;
+  text-align: left;
   margin-top: 10px;
 }
 
@@ -110,6 +112,8 @@
 
 .command-line {
   white-space: pre-wrap;
+    position: relative;
+    top: 40vh;
 }
 
 @keyframes typing {
@@ -123,7 +127,11 @@
 
         * {margin: 0; padding: 0;}
         body {background: black;}
-canvas {display: block;}
+canvas {display: flex;
+position: absolute;
+width: 100%;
+z-index: -1;
+height: 100%;}
     </style>
 </head>
     <body>
