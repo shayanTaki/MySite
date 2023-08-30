@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const inputText = inputField.textContent.trim();
             outputElement.innerHTML += `<div class="command-line">guest@hacker:~$ ${inputText}</div>`;
 
-            if (inputText === '1' || inputText === '2' || inputText === '3') {
+            if (inputText === '1' ) {
                 const selectedItem = items[parseInt(inputText) - 1];
                 outputElement.innerHTML += `<div class="command-line">Opening link for ${selectedItem}...</div>`;
 
                 // Simulate navigating to the link
                 setTimeout(() => {
-                    window.location.href = `https://www.example.com/${selectedItem}`;
+                    window.location.href = `http://127.0.0.1:8000/e`;
                 }, 1500);
             } else {
                 outputElement.innerHTML += `<div class="command-line">${inputText}: command not found</div>`;
@@ -36,3 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+const inputElement1 = document.getElementById('input');
+
+    setInterval(() => {
+        inputElement1.style.border = 'solid 2px green';
+        inputElement1.style.opacity = '0.8';
+    }, 3000);

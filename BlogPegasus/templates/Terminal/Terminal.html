@@ -4,15 +4,15 @@
 <div class="terminal-container">
         <div class="terminal">
             <pre id="output"></pre>
-            <div class="prompt">guest@hacker:~$ <span class="input" id="input" contenteditable></span></div>
+            <div id="demo" class="prompt">guest@hacker:~$ <span class="input input-color-change" id="input"contenteditable placeholder="متن ورودی را اینجا وارد کنید..."></span></div>
             <div class="items">
-                <p>---->  Welcome  To  My  World &nbsp  PegaSoS Web  </p>
+                <p>---->  { Welcome  To  My  World &nbsp  PegaSoS Web } </p>
                 <br>
-                <p></p>
+                <p>| please Enter The Numbers Menu |</p>
                 <ul>
-                    <li>item1</li>
-                    <li>item2</li>
-                    <li>item3</li>
+                    <li class="li11">Hacking [1]</li>
+                    <li class="li11">Programing [2]</li>
+                    <li class="li11">Conect To Mw [3]</li>
                 </ul>
             </div>
             <div class="penguin">
@@ -33,5 +33,21 @@
     </div>
 
     <script src="{% static 'js/script.js' %}"></script>
-"></script>
+<script>
+
+
+var i = 0;
+var txt = ""
+var speed = 50;
+
+function typeWriter() {
+    if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+
+    }
+}
+
+</script>
 {% endblock %}

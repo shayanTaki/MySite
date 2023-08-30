@@ -49,19 +49,38 @@
   align-items: center;
   width: 93%;
   background-color: #000;
+    font-size: 3vh;
 }
 
 .prompt .input {
   background-color: transparent;
-  color: #00ff00;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing 2s steps(30, end);
+            color: #00ff00;
+            border: solid 2px rgba(255, 0, 0, 0.2);
+            outline: none;
+            font-size: 3vh;
+            width: 50%;
+            white-space: nowrap;
+            overflow: hidden;
+            border-radius: 4px;
+            transition: border-color 1.5s ease-in-out;
+            animation: colorChange 3s infinite;
+
 }
+
+
+ @keyframes colorChange {
+            0% {
+                border-color: #ff000054;
+            }
+            50% {
+                border-color: #ff0000;
+            }
+            100% {
+                border-color: #ff000054;
+            }
+        }
+
+
 
 .items {
   margin-bottom: 10px;
@@ -70,7 +89,7 @@
 .items p {
   color: #00ff00;
   margin: 0;
-  font-weight: bold;
+  font-size: 3vh;
 }
 
 .items ul {
@@ -80,7 +99,7 @@
 }
 
 .items li {
-  color: #00ff00;
+
   margin-left: 20px;
 }
 
@@ -103,6 +122,7 @@
 
 #output {
   white-space: pre-wrap;
+    color: #ffffff75;
 }
 
 .highlight {
@@ -112,8 +132,7 @@
 
 .command-line {
   white-space: pre-wrap;
-    position: relative;
-    top: 40vh;
+
 }
 
 @keyframes typing {
@@ -132,9 +151,16 @@ position: absolute;
 width: 100%;
 z-index: -1;
 height: 100%;}
+
+.li11{
+    font-size: 3vh;
+    color: red;
+    font-weight: bold;
+}
+
     </style>
 </head>
-    <body>
+    <body onload="TypeTow();">
     {% block Body %}
 
 
