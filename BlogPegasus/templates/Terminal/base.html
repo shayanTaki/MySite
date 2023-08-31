@@ -1,0 +1,223 @@
+<html>
+<head>
+<title>Matrix Rain</title>
+    <style>
+
+        body {
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #111;
+  color: #00ff00;
+  font-size: 16px;
+}
+
+.terminal-container {
+  width: 90%;
+  max-width: 100vh;
+}
+
+.terminal {
+  background-color: #000;
+  color: #00ff00;
+  padding: 20px;
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+  position: absolute;
+  overflow: auto;
+   width: 85%;
+    height: 60vh;
+    top: 10%;
+    left: 2vh;
+    font-size: 2vh;
+
+}
+
+.prompt {
+  color: #00ff00;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  padding: 5px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  width: 93%;
+  background-color: #000;
+    font-size: 3vh;
+}
+
+.prompt .input {
+  background-color: transparent;
+            color: #00ff00;
+            border: solid 2px rgba(255, 0, 0, 0.2);
+            outline: none;
+            font-size: 3vh;
+            width: 50%;
+            white-space: nowrap;
+            overflow: hidden;
+            border-radius: 4px;
+            transition: border-color 1.5s ease-in-out;
+            animation: colorChange 3s infinite;
+
+}
+
+
+ @keyframes colorChange {
+            0% {
+                border-color: #ff000054;
+            }
+            50% {
+                border-color: #ff0000;
+            }
+            100% {
+                border-color: #ff000054;
+            }
+        }
+
+
+
+.items {
+  margin-bottom: 10px;
+}
+
+.items p {
+  color: #00ff00;
+  margin: 0;
+  font-size: 3vh;
+}
+
+.items ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.items li {
+
+  margin-left: 20px;
+}
+
+.penguin {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.penguin pre {
+  font-size: 20px;
+  margin: 0;
+}
+
+.penguin-caption {
+  color: #00ff00;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 5px;
+}
+
+#output {
+  white-space: pre-wrap;
+    color: #ffffff75;
+}
+
+.highlight {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.command-line {
+  white-space: pre-wrap;
+
+}
+
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+        * {margin: 0; padding: 0;}
+        body {background: black;}
+canvas {display: flex;
+position: absolute;
+width: 100%;
+z-index: -1;
+height: 100%;}
+
+.li11{
+    font-size: 3vh;
+    color: red;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+    <body>
+    {% block Body %}
+
+
+  {% endblock Body %}
+    <canvas id="c"></canvas>
+    </body>
+    <script>
+
+var c = document.getElementById("c");
+var ctx = c.getContext("2d");
+
+//making the canvas full screen
+c.height = window.innerHeight;
+c.width = window.innerWidth;
+
+//english characters
+var english = "1001010101110101010101010010101000101011101111010101010110101010101010101110000101";
+//converting the string into an array of single characters
+english = english.split("");
+
+var font_size = 15;
+var columns = c.width/font_size; //number of columns for the rain
+//an array of drops - one per column
+var drops = [];
+//x below is the x coordinate
+//1 = y co-ordinate of the drop(same for every drop initially)
+for(var x = 0; x < columns; x++)
+	drops[x] = 1;
+
+//drawing the characters
+function draw()
+{
+	//Black BG for the canvas
+	//translucent BG to show trail
+	ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+	ctx.fillRect(0, 0, c.width, c.height);
+
+	ctx.fillStyle = "#0F0"; //green text
+	ctx.font = font_size + "px arial";
+	//looping over drops
+	for(var i = 0; i < drops.length; i++)
+	{
+		//a random chinese character to print
+		var text = english[Math.floor(Math.random()*english.length)];
+		//x = i*font_size, y = value of drops[i]*font_size
+		ctx.fillText(text, i*font_size, drops[i]*font_size);
+
+		//sending the drop back to the top randomly after it has crossed the screen
+		//adding a randomness to the reset to make the drops scattered on the Y axis
+		if(drops[i]*font_size > c.height && Math.random() > 0.975)
+			drops[i] = 0;
+
+		//incrementing Y coordinate
+		drops[i]++;
+	}
+}
+
+setInterval(draw, 33);
+    </script>
+</html>

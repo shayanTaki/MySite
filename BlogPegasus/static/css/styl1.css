@@ -44,6 +44,8 @@
     height: 40vh;
     border:2px dotted green;
     border-radius: 1vh;
+    transition: border-color 1.5s ease-in-out;
+    animation: colorChange 3s infinite;
     overflow: hidden;
 }
 
@@ -62,6 +64,8 @@
     height: 40vh;
     border:2px dotted green;
     border-radius: 1vh;
+    transition: border-color 1.5s ease-in-out;
+    animation: colorChange 3s infinite;
     overflow: hidden;
 }
 
@@ -78,6 +82,8 @@
     height: 40vh;
     border:2px dotted green;
     overflow: hidden;
+    transition: border-color 1.5s ease-in-out;
+    animation: colorChange 3s infinite;
     border-radius: 1vh;
 }
 
@@ -96,8 +102,13 @@
         border: 2px solid white;
         width: 100%;
         position: fixed;
-        bottom:10%;z-index: 1;height: 4px
+        bottom:10%;z-index: 1;
+        height: 4px;
+
+        right: 0vh;
+        left: 0vh;
       }
+
       /** {box-sizing: border-box;}*/
       /*body {font-family: Verdana, sans-serif;}*/
       /*.mySlides {display: none;}*/
@@ -345,7 +356,7 @@
 }
 .glass-div1 {
     position: relative;
-    top: 198vh;
+    top: 79vh;
     margin-bottom: 20vh;
   width: 40%;
   height: 40%;
@@ -372,6 +383,7 @@
   height: 100%;
   object-fit: cover;
   filter: blur(30%);
+    margin-block: 0vh;
 }
 
 .text-container1 {
@@ -401,7 +413,8 @@
     color: #5cb85c;
 }
 .description1 {
-    color: #66FF00;
+    color: rgba(102, 255, 0, 0.47);
+    font-size: 10px;
 }
 
 .glass-div1:hover .roundcont1 {
@@ -421,15 +434,27 @@
     position: relative;
     width: 95%;
     margin: auto;
-    height: 100vh;
-    border: dotted 2px green;
-    top:105vh;
+    height: 109vh;
+    border: dotted 2px rgb(0, 128, 0);
+    top:239vh;
     border-radius: 3vh;
+    transition: border-color 1.5s ease-in-out;
+    animation: colorChange 3s infinite;
 
 }
 
 
-
+@keyframes colorChange {
+            0% {
+                border-color: rgba(0, 128, 0, 0.29);
+            }
+            50% {
+                border-color: #008000FF;
+            }
+            100% {
+                border-color: rgba(0, 128, 0, 0.29);
+            }
+        }
 
 
 .sld-img{
@@ -438,17 +463,20 @@
 
 
 
+
+
+
 @media screen and (min-width: 475px) {
   .glass-div1 {
-    top: 195vh;
+    top: 198vh;
       width: 20%;
   height: 20%;
   }
 
 
   .div-z{
-       top:128vh;
-      height: 50vh;
+      top: 264vh;
+    height: 32vh;
     }
     #demo{
         font-size:85%;
@@ -486,10 +514,31 @@
     .sld-img{
         display: flex;
     }
+    #c{
+        height: 234vh;
+    }
+
+    .blur-image1 {
+        margin-block: 21vh;
+    }
 }
 
 
 
 
+canvas {display: flex;
+position: absolute;
+width: 100%;
+z-index: -1;
+height: 100%;}
+
+
+#c{
+    position: absolute;
+    width: 100%;
+    height:424vh;
+    top: 3vh;
+    text-shadow: -17px 16px 8px white;
+}
 
 
