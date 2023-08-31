@@ -12,7 +12,7 @@
   <script src="{% static 'js/jquery.min' %}"></script>
   <script>
     function scrollToTarget() {
-      const target = document.getElementById('slideshow');
+      const target = document.getElementById('glass-dv');
       const me = document.getElementById('home-line');
       me.style.display = "none";
       target.scrollIntoView({ behavior: 'smooth' });
@@ -81,6 +81,19 @@ function TypeThree() {
   <div class="felex-three" >  <div class="felex-three-in">  <p id="mtn3"class="h3" >     </div>  </div>
 
 
+
+
+        <div id="home-line">
+
+            <a style="cursor: pointer;" onclick="scrollToTarget()" >
+
+                <i style="font-size: 40px;color: white;border: 1px solid black;border-radius: 15px" class="fa fa-user-secret">
+
+                </i>
+            </a>
+
+
+    </div>
   <di id="d-itm-1">
       {% for g in menuItem %}
           <div class="custom-box">
@@ -121,49 +134,88 @@ function TypeThree() {
   </div>
 
 
-  <img id="img" src="{% static 'blog/img/bg.jpg' %}" alt="sh" >
-      <div id="home-line">
-
-         <a style="cursor: pointer;" onclick="scrollToTarget()" >
-
-          <i style="font-size: 40px;color: white;border: 1px solid black;border-radius: 15px" class="fa fa-user-secret">
-
-          </i>
-        </a>
-      </div>
+{#  <img id="img" src="{% static 'blog/img/bg.jpg' %}" alt="sh" >#}
+{#      <div id="home-line">#}
+{##}
+{#         <a style="cursor: pointer;" onclick="scrollToTarget()" >#}
+{##}
+{#          <i style="font-size: 40px;color: white;border: 1px solid black;border-radius: 15px" class="fa fa-user-secret">#}
+{##}
+{#          </i>#}
+{#        </a>#}
+{#      </div>#}
 
 
 
 
       
+<div id="threecircelID" class="threecircel">
+  {% for d in img_mno %}
+
+            <div id="glass-dv" class="glass-div1">
+                <div class="roundcont1">
+                  <img src="{% static d.image %}" alt="تصویر" class="blur-image1">
+                  <div class="text-container1">
+                    <a href="{{d.link_web}}" class="title1">{{d.title}}</a>
+                    <p class="description1">{{d.text_inf}}</p>
+                  </div>
+                </div>
+            </div>
+
+
+  {% endfor %}
+    </div>
+
+    <div>
+        <p id="p_tank" style="color: #5bc0de;position: relative">hi </p>
+    </div>
+
+
 </div>
+    {#    <button type="button"  >helooooooo</button>#}
+
+    <div class="div-z">
+
+        <div class="div-z-in"></div>
+
+
+
+
+    </div>
       <br>
       <div style="text-align:center">
-        <span class="dot"></span> 
-        <span class="dot"></span> 
-        <span class="dot"></span> 
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
       </div>
-      
-      
+
+
+
+
+
+
       <script>
       let slideIndex = 0;
       showSlides();
-      
+
       function showSlides() {
         let i;
         let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
+        {#let dots = document.getElementsByClassName("dot");#}
         for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";  
+          slides[i].style.display = "none";
         }
         slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}    
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";  
-        dots[slideIndex-1].className += " active";
+        if (slideIndex > slides.length) {slideIndex = 1}
+        {#for (i = 0; i < dots.length; i++) {#}
+        {#  dots[i].className = dots[i].className.replace(" active", "");#}
+
+        slides[slideIndex-1].style.display = "block";
+        {#dots[slideIndex-1].className += " active";#}
         setTimeout(showSlides, 5000); // Change image every 2 seconds
       }
       </script>
+
+
+
 {% endblock %}
