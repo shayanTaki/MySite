@@ -22,7 +22,7 @@
 }
 
 .terminal {
-  background-color: #000;
+  background-color: #0000004a;
   color: #00ff00;
   padding: 20px;
   border: 2px solid #00ff00;
@@ -81,6 +81,53 @@
         }
 
 
+ @keyframes colorKoliChange {
+            0% {
+                color: rgb(255, 0, 0);
+            }
+            50% {
+                color: rgba(255, 0, 0, 0.62);
+            }
+            75% {
+                color: rgba(255, 0, 0, 0.38);
+            }
+            100% {
+                color: rgba(255, 0, 0, 0.15);
+            }
+        }
+
+
+
+ @keyframes colorKoliChange {
+            0% {
+                color: rgb(255, 0, 0);
+            }
+            50% {
+                color: rgba(255, 0, 0, 0.62);
+            }
+            75% {
+                color: rgba(255, 0, 0, 0.38);
+            }
+            100% {
+                color: rgba(255, 0, 0, 0.15);
+            }
+        }
+ @keyframes colorKoliBChange {
+            0% {
+                color: rgb(200, 0, 255);
+            }
+            50% {
+                color: rgba(208, 0, 255, 0.62);
+            }
+            75% {
+                color: rgba(170, 0, 255, 0.38);
+            }
+            100% {
+                color: rgba(208, 0, 255, 0.15);
+            }
+        }
+
+
 
 .items {
   margin-bottom: 10px;
@@ -88,8 +135,8 @@
 
 .items p {
   color: #00ff00;
-  margin: 0;
-  font-size: 3vh;
+
+  {#font-size: 3vh;#}
 }
 
 .items ul {
@@ -156,6 +203,39 @@ height: 100%;}
     font-size: 3vh;
     color: red;
     font-weight: bold;
+
+    /* justify-content: center; */
+    text-align: center;
+    animation: colorKoliChange 3s infinite;
+}
+.spli{
+    color: #9c00d3;
+    animation: colorKoliBChange 3s infinite;
+
+}
+.phack{
+    font-size: 3vh;
+}
+
+
+
+.pmenu{
+    font-size: 4vh;
+    margin-bottom: 1vh;
+    text-align: center;
+}
+@media screen and ( max-width: 990px) {
+    .phack {
+        font-size: 0vh;
+
+    }
+
+    .pmenu {
+        font-size: 1vh;
+        margin-bottom: 1vh;
+    }
+
+
 }
 
     </style>
