@@ -7,6 +7,9 @@ def index(request):
     return render(request, 'Terminal/Terminal.html')
 
 
+def HakingMusic(request):
+    return render(request, 'Haking/music.html')
+
 
 
 def nav(request):
