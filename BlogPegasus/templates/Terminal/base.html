@@ -4,6 +4,7 @@
     <style>
 
         body {
+
   font-family: 'Courier New', monospace;
   margin: 0;
   padding: 0;
@@ -25,13 +26,13 @@
   background-color: #0000004a;
   color: #00ff00;
   padding: 20px;
-  border: 2px solid #00ff00;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+  {#border: 2px solid #00ff00;#}
+  {#border-radius: 10px;#}
+  {#box-shadow: 0 0 10px rgb(0 255 0);#}
   position: absolute;
   overflow: auto;
    width: 85%;
-    height: 60vh;
+    height: auto;
     top: 10%;
     left: 2vh;
     font-size: 2vh;
@@ -100,16 +101,16 @@
 
  @keyframes colorKoliChange {
             0% {
-                color: rgb(255, 0, 0);
+                color: rgb(26, 255, 0);
             }
             50% {
-                color: rgba(255, 0, 0, 0.62);
+                color: rgba(26, 255, 0, 0.82);
             }
             75% {
-                color: rgba(255, 0, 0, 0.38);
+                color: rgba(64, 255, 0, 0.59);
             }
             100% {
-                color: rgba(255, 0, 0, 0.15);
+                color: rgba(26, 255, 0, 0.4);
             }
         }
  @keyframes colorKoliBChange {
@@ -196,12 +197,55 @@
 canvas {display: flex;
 position: absolute;
 width: 100%;
+z-index: 1;
+height: 100%;
+opacity: 100%;
+}
+
+
+
+
+#c {
+  animation: fade-out 10s forwards;
+}
+
+@keyframes fade-out {
+  100% {
+    opacity: 0;
+  }
+
+    50%{
+        opacity: 50%;
+    }
+
+    25%{
+        opacity: 75%;
+    }
+
+    0%{
+        opacity: 100%;
+    }
+
+}
+
+
+.fade-out {
+  animation-name: fade-out;
+}
+
+
+
+
+
+.z-in-1{
 z-index: -1;
-height: 100%;}
+
+}
+
 
 .li11{
     font-size: 3vh;
-    color: red;
+    color: #36f604;
     font-weight: bold;
 
     /* justify-content: center; */
@@ -240,7 +284,7 @@ height: 100%;}
 
     </style>
 </head>
-    <body>
+    <body onload="setTimeout(function() { document.getElementById('c').classList.add('fade-out');document.getElementById('c').classList.add('z-in-1') }, 6000)">
     {% block Body %}
 
 
@@ -257,7 +301,7 @@ c.height = window.innerHeight;
 c.width = window.innerWidth;
 
 //english characters
-var english = "1001010101110101010101010010101000101011101111010101010110101010101010101110000101";
+var english = "100101010111010101010101001010100010101110111101010101011010101010101010111000010101001010101010101010101011";
 //converting the string into an array of single characters
 english = english.split("");
 
@@ -299,5 +343,8 @@ function draw()
 }
 
 setInterval(draw, 33);
+
+
+
     </script>
 </html>
